@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "1.0.0",
+        "version": "1.0.1",
         "description": "TapiVirtualNetwork API generated from TapiVirtualNetwork.yang",
         "title": "TapiVirtualNetwork API"
     },
@@ -17,11 +17,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -38,6 +41,39 @@
                     "application/json"
                 ],
                 "operationId": "retrieveContext_vnwService_vnwService"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/VirtualNetworkService"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: _vnwService",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "_vnwServicebody object",
+                        "schema": {
+                            "$ref": "#/definitions/VirtualNetworkService"
+                        },
+                        "name": "_vnwService",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create _vnwService",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createContext_vnwService_vnwService"
             }
         },
         "/config/Context/_vnwService/{uuid}/": {
@@ -63,7 +99,7 @@
                         "required": true,
                         "description": "_vnwServicebody object",
                         "schema": {
-                            "$ref": "#/definitions/_vnwServiceSchema"
+                            "$ref": "#/definitions/VirtualNetworkService"
                         },
                         "name": "_vnwService",
                         "in": "body"
@@ -81,7 +117,10 @@
             "post": {
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/VirtualNetworkService"
+                        }
                     },
                     "400": {
                         "description": "Internal Error"
@@ -100,7 +139,7 @@
                         "required": true,
                         "description": "_vnwServicebody object",
                         "schema": {
-                            "$ref": "#/definitions/_vnwServiceSchema"
+                            "$ref": "#/definitions/VirtualNetworkService"
                         },
                         "name": "_vnwService",
                         "in": "body"
@@ -148,7 +187,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/_vnwServiceSchema"
+                            "$ref": "#/definitions/VirtualNetworkService"
                         }
                     },
                     "400": {
@@ -181,11 +220,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/name/{valueName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -381,11 +423,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/label/{valueName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -581,11 +626,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -658,11 +706,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/_servicePort/{localId}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -687,6 +738,46 @@
                     "application/json"
                 ],
                 "operationId": "retrieveContext_vnwService_servicePort_servicePort"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/VirtualNetworkServicePort"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: _servicePort",
+                "parameters": [
+                    {
+                        "description": "ID of uuid",
+                        "required": true,
+                        "type": "string",
+                        "name": "uuid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "_servicePortbody object",
+                        "schema": {
+                            "$ref": "#/definitions/VirtualNetworkServicePort"
+                        },
+                        "name": "_servicePort",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create _servicePort",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createContext_vnwService_servicePort_servicePort"
             }
         },
         "/config/Context/_vnwService/{uuid}/_servicePort/{localId}/": {
@@ -737,7 +828,10 @@
             "post": {
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/VirtualNetworkServicePort"
+                        }
                     },
                     "400": {
                         "description": "Internal Error"
@@ -858,11 +952,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/_servicePort/{localId}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -949,11 +1046,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/_vnwConstraint/{localId}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -978,6 +1078,46 @@
                     "application/json"
                 ],
                 "operationId": "retrieveContext_vnwService_vnwConstraint_vnwConstraint"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/VirtualNetworkConstraint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: _vnwConstraint",
+                "parameters": [
+                    {
+                        "description": "ID of uuid",
+                        "required": true,
+                        "type": "string",
+                        "name": "uuid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "_vnwConstraintbody object",
+                        "schema": {
+                            "$ref": "#/definitions/VirtualNetworkConstraint"
+                        },
+                        "name": "_vnwConstraint",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create _vnwConstraint",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createContext_vnwService_vnwConstraint_vnwConstraint"
             }
         },
         "/config/Context/_vnwService/{uuid}/_vnwConstraint/{localId}/": {
@@ -1028,7 +1168,10 @@
             "post": {
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/VirtualNetworkConstraint"
+                        }
                     },
                     "400": {
                         "description": "Internal Error"
@@ -1315,11 +1458,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/_vnwConstraint/{localId}/costCharacteristic/{costName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1541,7 +1687,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveContext_vnwService_vnwConstraintCostCharacteristicCostCharacteristic"
+                "operationId": "retrieveContext_vnwService_vnwConstraintCostCharacteristicCostCharacteristicCostName"
             }
         },
         "/config/Context/_vnwService/{uuid}/_vnwConstraint/{localId}/latencyCharacteristic/": {
@@ -1550,11 +1696,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/_vnwConstraint/{localId}/latencyCharacteristic/{trafficPropertyName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1776,7 +1925,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveContext_vnwService_vnwConstraintLatencyCharacteristicLatencyCharacteristic"
+                "operationId": "retrieveContext_vnwService_vnwConstraintLatencyCharacteristicLatencyCharacteristicTrafficPropertyName"
             }
         },
         "/config/Context/_vnwService/{uuid}/_vnwConstraint/{localId}/_extensions/": {
@@ -1785,11 +1934,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_vnwService/{uuid}/_vnwConstraint/{localId}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -2807,6 +2959,12 @@
                             "$ref": "#/definitions/AdminStatePac"
                         },
                         "direction": {
+                            "enum": [
+                                "BIDIRECTIONAL",
+                                "SINK",
+                                "SOURCE",
+                                "UNDEFINED_OR_UNKNOWN"
+                            ],
                             "type": "string",
                             "description": "none"
                         },
@@ -2847,6 +3005,11 @@
                 {
                     "properties": {
                         "direction": {
+                            "enum": [
+                                "BIDIRECTIONAL",
+                                "UNIDIRECTIONAL",
+                                "UNDEFINED_OR_UNKNOWN"
+                            ],
                             "type": "string",
                             "description": "The directionality of the Link. \nIs applicable to simple Links where all LinkEnds are BIDIRECTIONAL (the Link will be BIDIRECTIONAL) or UNIDIRECTIONAL (the Link will be UNIDIRECTIONAL). \nIs not present in more complex cases."
                         },
@@ -3051,6 +3214,7 @@
                         "PLANNED",
                         "POTENTIAL",
                         "INSTALLED",
+                        "RESTORING",                        
                         "PENDING_REMOVAL"
                     ],
                     "type": "string",
@@ -3083,7 +3247,7 @@
                 },
                 "uuid": {
                     "type": "string",
-                    "description": "UUID: An identifier that is universally unique\n(consider in the context of Identifier: A property of an entity/role with a value that is unique within an identifier space, where the identifier space is itself globally unique, and immutable. An identifier carries no semantics with respect to the purpose or state of the entity)"
+                    "description": "Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-' + '[0-9a-fA-F]{4}-[0-9a-fA-F]{12} \n A Universally Unique IDentifier in the string representation defined in RFC 4122.  The canonical representation uses lowercase characters. \n The following is an example of a UUID in string representation: f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
                 },
                 "name": {
                     "items": {
@@ -3174,6 +3338,7 @@
                         "PLANNED",
                         "POTENTIAL",
                         "INSTALLED",
+                        "RESTORING",                        
                         "PENDING_REMOVAL"
                     ],
                     "type": "string",
@@ -3205,6 +3370,7 @@
                         "PLANNED",
                         "POTENTIAL",
                         "INSTALLED",
+                        "RESTORING",                        
                         "PENDING_REMOVAL"
                     ],
                     "type": "string",
@@ -3214,24 +3380,37 @@
         },
         "ServiceEndPoint": {
             "description": "The LogicalTerminationPoint (LTP) object class encapsulates the termination and adaptation functions of one or more transport layers. \nThe structure of LTP supports all transport protocols including circuit and packet forms.",
-            "properties": {
-                "_state": {
-                    "description": "none",
-                    "$ref": "#/definitions/LifecycleStatePac"
+            "allOf": [
+                {
+                    "$ref": "#/definitions/ResourceSpec"
                 },
-                "direction": {
-                    "type": "string",
-                    "description": "none"
-                },
-                "_layerProtocol": {
-                    "items": {
-                        "$ref": "#/definitions/LayerProtocol"
-                    },
-                    "type": "array",
-                    "description": "none",
-                    "x-key": "localId"
-                }
-            }
+                {
+		            "properties": {
+		                "_state": {
+		                    "description": "none",
+		                    "$ref": "#/definitions/LifecycleStatePac"
+		                },
+		                "direction": {
+		                    "enum": [
+		                        "BIDIRECTIONAL",
+		                        "SINK",
+		                        "SOURCE",
+		                        "UNDEFINED_OR_UNKNOWN"
+		                    ],
+		                    "type": "string",
+		                    "description": "none"
+		                },
+		                "_layerProtocol": {
+		                    "items": {
+		                        "$ref": "#/definitions/LayerProtocol"
+		                    },
+		                    "type": "array",
+		                    "description": "none",
+		                    "x-key": "localId"
+		                }
+		            }
+		        }
+		    ]
         },
         "LocalClass": {
             "description": "The TAPI GlobalComponent serves as the super class for all TAPI entities that can be directly retrieved by their ID. As such, these are first class entities and their ID is expected to be globally unique. ",
@@ -3247,61 +3426,16 @@
                 "localId": {
                     "type": "string",
                     "description": "none"
+                },
+                "name": {
+                    "items": {
+                        "$ref": "#/definitions/NameAndValue"
+                    },
+                    "type": "array",
+                    "description": "List of names. A property of an entity with a value that is unique in some namespace but may change during the life of the entity. A name carries no semantics with respect to the purpose of the entity.",
+                    "x-key": "valueName"
                 }
             }
-        },
-        "_vnwServiceSchema": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/ServiceSpec"
-                },
-                {
-                    "properties": {
-                        "_servicePort": {
-                            "items": {
-                                "$ref": "#/definitions/VirtualNetworkServicePort"
-                            },
-                            "type": "array",
-                            "description": "none",
-                            "x-key": "localId"
-                        },
-                        "layerProtocolName": {
-                            "items": {
-                                "enum": [
-                                    "OCH",
-                                    "ODU",
-                                    "ETH",
-                                    "MPLS_TP"
-                                ],
-                                "type": "string",
-                                "description": "none"
-                            },
-                            "type": "array"
-                        },
-                        "_vnwConstraint": {
-                            "items": {
-                                "$ref": "#/definitions/VirtualNetworkConstraint"
-                            },
-                            "type": "array",
-                            "description": "none",
-                            "x-key": "localId"
-                        },
-                        "_state": {
-                            "description": "none",
-                            "$ref": "#/definitions/AdminStatePac"
-                        },
-                        "_topology": {
-                            "type": "string",
-                            "description": "none",
-                            "x-path": "/Tapi:Context/Tapi:_topology/Tapi:uuid"
-                        },
-                        "_schedule": {
-                            "description": "none",
-                            "$ref": "#/definitions/TimeRange"
-                        }
-                    }
-                }
-            ]
         },
         "CreateVirtualNetworkServiceRPCInputSchema": {
             "properties": {

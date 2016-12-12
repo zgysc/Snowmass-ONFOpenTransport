@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "1.0.0",
+        "version": "1.0.1",
         "description": "TapiConnectivity API generated from TapiConnectivity.yang",
         "title": "TapiConnectivity API"
     },
@@ -17,11 +17,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -46,7 +49,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/_connectionSchema"
+                            "$ref": "#/definitions/Connection"
                         }
                     },
                     "400": {
@@ -79,11 +82,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/name/{valueName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -156,11 +162,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/label/{valueName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -233,11 +242,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -310,11 +322,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/_connectionPort/{localId}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -428,11 +443,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
-                                "x-path": "/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId}/"
+                                "x-path": "/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId2}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -466,7 +484,7 @@
                 "operationId": "retrieveContext_connection_connectionPort_connectionEndPoint_layerProtocol_layerProtocol"
             }
         },
-        "/config/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId}/": {
+        "/config/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId2}/": {
             "get": {
                 "responses": {
                     "200": {
@@ -496,10 +514,10 @@
                         "in": "path"
                     },
                     {
-                        "description": "ID of localId",
+                        "description": "ID of localId2",
                         "required": true,
                         "type": "string",
-                        "name": "localId",
+                        "name": "localId2",
                         "in": "path"
                     }
                 ],
@@ -513,17 +531,20 @@
                 "operationId": "retrieveContext_connection_connectionPort_connectionEndPoint_layerProtocol_layerProtocolById"
             }
         },
-        "/config/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId}/_extensions/": {
+        "/config/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId2}/_extensions/": {
             "get": {
                 "responses": {
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
-                                "x-path": "/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId}/_extensions/{extensionsSpecification}/"
+                                "x-path": "/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId2}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -547,10 +568,10 @@
                         "in": "path"
                     },
                     {
-                        "description": "ID of localId",
+                        "description": "ID of localId2",
                         "required": true,
                         "type": "string",
-                        "name": "localId",
+                        "name": "localId2",
                         "in": "path"
                     }
                 ],
@@ -564,7 +585,7 @@
                 "operationId": "retrieveContext_connection_connectionPort_connectionEndPoint_layerProtocol_extensions_extensions"
             }
         },
-        "/config/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId}/_extensions/{extensionsSpecification}/": {
+        "/config/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_layerProtocol/{localId2}/_extensions/{extensionsSpecification}/": {
             "get": {
                 "responses": {
                     "200": {
@@ -594,10 +615,10 @@
                         "in": "path"
                     },
                     {
-                        "description": "ID of localId",
+                        "description": "ID of localId2",
                         "required": true,
                         "type": "string",
-                        "name": "localId",
+                        "name": "localId2",
                         "in": "path"
                     },
                     {
@@ -665,11 +686,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/name/{valueName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -756,11 +780,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/label/{valueName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -847,11 +874,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/_connectionPort/{localId}/_connectionEndPoint/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -938,11 +968,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/_connectionPort/{localId}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1029,11 +1062,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/_route/{localId}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1106,11 +1142,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connection/{uuid}/_route/{localId}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1231,11 +1270,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1252,7 +1294,40 @@
                     "application/json"
                 ],
                 "operationId": "retrieveContext_connectivityService_connectivityService"
-            }
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectivityService"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: _connectivityService",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "_connectivityServicebody object",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectivityService"
+                        },
+                        "name": "_connectivityService",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create _connectivityService",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createContext_connectivityService_connectivityService"
+            }            
         },
         "/config/Context/_connectivityService/{uuid}/": {
             "put": {
@@ -1277,7 +1352,7 @@
                         "required": true,
                         "description": "_connectivityServicebody object",
                         "schema": {
-                            "$ref": "#/definitions/_connectivityServiceSchema"
+                            "$ref": "#/definitions/ConnectivityService"
                         },
                         "name": "_connectivityService",
                         "in": "body"
@@ -1295,7 +1370,10 @@
             "post": {
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectivityService"
+                        }
                     },
                     "400": {
                         "description": "Internal Error"
@@ -1314,7 +1392,7 @@
                         "required": true,
                         "description": "_connectivityServicebody object",
                         "schema": {
-                            "$ref": "#/definitions/_connectivityServiceSchema"
+                            "$ref": "#/definitions/ConnectivityService"
                         },
                         "name": "_connectivityService",
                         "in": "body"
@@ -1362,7 +1440,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/_connectivityServiceSchema"
+                            "$ref": "#/definitions/ConnectivityService"
                         }
                     },
                     "400": {
@@ -1395,11 +1473,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/name/{valueName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1595,11 +1676,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/label/{valueName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1795,11 +1879,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1872,11 +1959,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_servicePort/{localId}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -1901,7 +1991,47 @@
                     "application/json"
                 ],
                 "operationId": "retrieveContext_connectivityService_servicePort_servicePort"
-            }
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectivityServicePort"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: _servicePort",
+                "parameters": [
+                    {
+                        "description": "ID of uuid",
+                        "required": true,
+                        "type": "string",
+                        "name": "uuid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "_servicePortbody object",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectivityServicePort"
+                        },
+                        "name": "_servicePort",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create _servicePort by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createContext_connectivityService_servicePort_servicePort"
+            }            
         },
         "/config/Context/_connectivityService/{uuid}/_servicePort/{localId}/": {
             "put": {
@@ -1951,7 +2081,10 @@
             "post": {
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectivityServicePort"
+                        }
                     },
                     "400": {
                         "description": "Internal Error"
@@ -2072,11 +2205,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_servicePort/{localId}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -2199,7 +2335,11 @@
             "post": {
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "Successful operation",
+                        "schema": {
+                            "description": "none",
+                            "$ref": "#/definitions/ConnectivityConstraint"
+                        }
                     },
                     "400": {
                         "description": "Internal Error"
@@ -2335,11 +2475,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_connConstraint/costCharacteristic/{costName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -2403,7 +2546,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveContext_connectivityService_connConstraintCostCharacteristicCostCharacteristic"
+                "operationId": "retrieveContext_connectivityService_connConstraintCostCharacteristicCostCharacteristicCostName"
             }
         },
         "/config/Context/_connectivityService/{uuid}/_connConstraint/latencyCharacteristic/": {
@@ -2412,11 +2555,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_connConstraint/latencyCharacteristic/{trafficPropertyName}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -2480,7 +2626,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveContext_connectivityService_connConstraintLatencyCharacteristicLatencyCharacteristic"
+                "operationId": "retrieveContext_connectivityService_connConstraintLatencyCharacteristicLatencyCharacteristicTrafficPropertyName"
             }
         },
         "/config/Context/_connectivityService/{uuid}/_connConstraint/_includePath/": {
@@ -2489,11 +2635,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_connConstraint/_includePath/{localId}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -2566,11 +2715,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_connConstraint/_includePath/{localId}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -2657,11 +2809,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_connConstraint/_excludePath/{localId}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -2734,11 +2889,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_connConstraint/_excludePath/{localId}/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -2825,11 +2983,14 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "items": {
+                            "properties": {
+                              "itemlist": {
+                                "items": {
                                 "type": "string",
                                 "x-path": "/Context/_connectivityService/{uuid}/_connConstraint/_extensions/{extensionsSpecification}/"
                             },
                             "type": "array"
+                            }}
                         }
                     },
                     "400": {
@@ -3207,6 +3368,30 @@
                 "operationId": "createGetConnectionDetailsById"
             }
         },
+        "/operations/getConnectionList/": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/GetConnectionListRPCOutputSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: getConnectionList",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create getConnectionList by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createGetConnectionListById"
+            }
+        },
         "/operations/getConnectivityServiceList/": {
             "post": {
                 "responses": {
@@ -3466,7 +3651,7 @@
                         "serviceType": {
                             "enum": [
                                 "POINT_TO_POINT_CONNECTIVITY",
-                                "POINT_TO_MULTIPOINT_CONNECTIVTY",
+                                "POINT_TO_MULTIPOINT_CONNECTIVITY",
                                 "MULTIPOINT_CONNECTIVITY"
                             ],
                             "type": "string",
@@ -3525,6 +3710,14 @@
                             "description": "The effect on the latency of a queuing process. This only has significant effect for packet based systems and has a complex characteristic.",
                             "x-key": "trafficPropertyName"
                         },
+                        "_corouteInclusion": {
+                            "items": {
+                                "type": "string",
+                                "description": "none",
+                                "x-path": "/Tapi:Context/Tapi:_connectivityService/Tapi:uuid"
+                            },
+                            "type": "array"
+                        },        
                         "_diversityExclusion": {
                             "items": {
                                 "type": "string",
@@ -3812,6 +4005,7 @@
                         "PLANNED",
                         "POTENTIAL",
                         "INSTALLED",
+                        "RESTORING",                        
                         "PENDING_REMOVAL"
                     ],
                     "type": "string",
@@ -3844,7 +4038,7 @@
                 },
                 "uuid": {
                     "type": "string",
-                    "description": "UUID: An identifier that is universally unique\n(consider in the context of Identifier: A property of an entity/role with a value that is unique within an identifier space, where the identifier space is itself globally unique, and immutable. An identifier carries no semantics with respect to the purpose or state of the entity)"
+                    "description": "Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-' + '[0-9a-fA-F]{4}-[0-9a-fA-F]{12} \n A Universally Unique IDentifier in the string representation defined in RFC 4122.  The canonical representation uses lowercase characters. \n The following is an example of a UUID in string representation: f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
                 },
                 "name": {
                     "items": {
@@ -3935,6 +4129,7 @@
                         "PLANNED",
                         "POTENTIAL",
                         "INSTALLED",
+                        "RESTORING",                        
                         "PENDING_REMOVAL"
                     ],
                     "type": "string",
@@ -3966,6 +4161,7 @@
                         "PLANNED",
                         "POTENTIAL",
                         "INSTALLED",
+                        "RESTORING",                        
                         "PENDING_REMOVAL"
                     ],
                     "type": "string",
@@ -3975,30 +4171,37 @@
         },
         "ServiceEndPoint": {
             "description": "The LogicalTerminationPoint (LTP) object class encapsulates the termination and adaptation functions of one or more transport layers. \nThe structure of LTP supports all transport protocols including circuit and packet forms.",
-            "properties": {
-                "_state": {
-                    "description": "none",
-                    "$ref": "#/definitions/LifecycleStatePac"
+            "allOf": [
+                {
+                    "$ref": "#/definitions/ResourceSpec"
                 },
-                "direction": {
-                    "enum": [
-                        "BIDIRECTIONAL",
-                        "SINK",
-                        "SOURCE",
-                        "UNDEFINED_OR_UNKNOWN"
-                    ],
-                    "type": "string",
-                    "description": "none"
-                },
-                "_layerProtocol": {
-                    "items": {
-                        "$ref": "#/definitions/LayerProtocol"
-                    },
-                    "type": "array",
-                    "description": "none",
-                    "x-key": "localId"
-                }
-            }
+                {
+		            "properties": {
+		                "_state": {
+		                    "description": "none",
+		                    "$ref": "#/definitions/LifecycleStatePac"
+		                },
+		                "direction": {
+		                    "enum": [
+		                        "BIDIRECTIONAL",
+		                        "SINK",
+		                        "SOURCE",
+		                        "UNDEFINED_OR_UNKNOWN"
+		                    ],
+		                    "type": "string",
+		                    "description": "none"
+		                },
+		                "_layerProtocol": {
+		                    "items": {
+		                        "$ref": "#/definitions/LayerProtocol"
+		                    },
+		                    "type": "array",
+		                    "description": "none",
+		                    "x-key": "localId"
+		                }
+		            }
+		        }
+		    ]
         },
         "LocalClass": {
             "description": "The TAPI GlobalComponent serves as the super class for all TAPI entities that can be directly retrieved by their ID. As such, these are first class entities and their ID is expected to be globally unique. ",
@@ -4014,6 +4217,14 @@
                 "localId": {
                     "type": "string",
                     "description": "none"
+                },
+                "name": {
+                    "items": {
+                        "$ref": "#/definitions/NameAndValue"
+                    },
+                    "type": "array",
+                    "description": "List of names. A property of an entity with a value that is unique in some namespace but may change during the life of the entity. A name carries no semantics with respect to the purpose of the entity.",
+                    "x-key": "valueName"
                 }
             }
         },
@@ -4598,119 +4809,6 @@
                 }
             ]
         },
-        "_connectionSchema": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/ResourceSpec"
-                },
-                {
-                    "properties": {
-                        "direction": {
-                            "enum": [
-                                "BIDIRECTIONAL",
-                                "UNIDIRECTIONAL",
-                                "UNDEFINED_OR_UNKNOWN"
-                            ],
-                            "type": "string",
-                            "description": "none"
-                        },
-                        "layerProtocolName": {
-                            "enum": [
-                                "OCH",
-                                "ODU",
-                                "ETH",
-                                "MPLS_TP"
-                            ],
-                            "type": "string",
-                            "description": "none"
-                        },
-                        "_route": {
-                            "items": {
-                                "$ref": "#/definitions/Route"
-                            },
-                            "type": "array",
-                            "description": "none",
-                            "x-key": "localId"
-                        },
-                        "_connectionPort": {
-                            "items": {
-                                "$ref": "#/definitions/ConnectionPort"
-                            },
-                            "type": "array",
-                            "description": "none",
-                            "x-key": "localId"
-                        },
-                        "_state": {
-                            "description": "none",
-                            "$ref": "#/definitions/OperationalStatePac"
-                        },
-                        "_node": {
-                            "type": "string",
-                            "description": "none",
-                            "x-path": "/Tapi:Context/Tapi:_topology/TapiTopology:_node/TapiTopology:uuid"
-                        }
-                    }
-                }
-            ]
-        },
-        "_connectivityServiceSchema": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/ServiceSpec"
-                },
-                {
-                    "properties": {
-                        "_connection": {
-                            "items": {
-                                "type": "string",
-                                "description": "none",
-                                "x-path": "/Tapi:Context/Tapi:_connection/Tapi:uuid"
-                            },
-                            "type": "array"
-                        },
-                        "_servicePort": {
-                            "items": {
-                                "$ref": "#/definitions/ConnectivityServicePort"
-                            },
-                            "type": "array",
-                            "description": "none",
-                            "x-key": "localId"
-                        },
-                        "direction": {
-                            "enum": [
-                                "BIDIRECTIONAL",
-                                "UNIDIRECTIONAL",
-                                "UNDEFINED_OR_UNKNOWN"
-                            ],
-                            "type": "string",
-                            "description": "none"
-                        },
-                        "layerProtocolName": {
-                            "enum": [
-                                "OCH",
-                                "ODU",
-                                "ETH",
-                                "MPLS_TP"
-                            ],
-                            "type": "string",
-                            "description": "none"
-                        },
-                        "_state": {
-                            "description": "none",
-                            "$ref": "#/definitions/AdminStatePac"
-                        },
-                        "_schedule": {
-                            "description": "none",
-                            "$ref": "#/definitions/TimeRange"
-                        },
-                        "_connConstraint": {
-                            "description": "none",
-                            "$ref": "#/definitions/ConnectivityConstraint"
-                        }
-                    }
-                }
-            ]
-        },
         "GetConnectionDetailsRPCInputSchema": {
             "properties": {
                 "connectionIdOrName": {
@@ -4728,6 +4826,17 @@
                 "connection": {
                     "description": "none",
                     "$ref": "#/definitions/Connection"
+                }
+            }
+        },
+        "GetConnectionListRPCOutputSchema": {
+            "properties": {
+                "connService": {
+                    "items": {
+                        "$ref": "#/definitions/Connection"
+                    },
+                    "type": "array",
+                    "description": "none"
                 }
             }
         },

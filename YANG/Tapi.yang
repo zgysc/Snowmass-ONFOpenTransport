@@ -43,7 +43,6 @@ module Tapi {
             }
             list name {
                 key 'valueName';
-                min-elements 1;
                 uses NameAndValue;
                 description "List of names. A property of an entity with a value that is unique in some namespace but may change during the life of the entity. A name carries no semantics with respect to the purpose of the entity.";
             }
@@ -93,6 +92,11 @@ module Tapi {
                 type string;
                 description "none";
             }
+            list name {
+                key 'valueName';
+                uses NameAndValue;
+                description "List of names. A property of an entity with a value that is unique in some namespace but may change during the life of the entity. A name carries no semantics with respect to the purpose of the entity.";
+            }
             list _extensions {
                 key 'extensionsSpecification';
                 config false;
@@ -132,18 +136,19 @@ module Tapi {
             leaf-list extensionsSpecTarget {
                 type string;
                 config false;
-                min-elements 1;
+                min-elements 0;
                 description "none";
             }
             description "none";
         }
         grouping Context {
             container _nwTopologyService {
+                presence "Context is available";
                 config false;
                 uses ServiceSpec;
                 description "none";
             }
-            list _connectivityService {
+            list _connectivityService {             
                 key 'uuid';
                 uses ServiceSpec;
                 description "none";
@@ -197,7 +202,9 @@ module Tapi {
             description "The Network Control Domain (NCD) object class represents the scope of control that a particular SDN controller has with respect to a particular network, (i.e., encompassing a designated set of interconnected (virtual) network elements).";
         }
         container Context {
+            presence "Context is available";
             uses Context;
+            description "none";        
         }
         grouping ResourceSpec {
             uses GlobalClass;
@@ -225,7 +232,7 @@ module Tapi {
                 config false;
                 description "none";
             }
-            uses ResourceSpec;
+            //uses ResourceSpec;
             description "The LogicalTerminationPoint (LTP) object class encapsulates the termination and adaptation functions of one or more transport layers. 
                 The structure of LTP supports all transport protocols including circuit and packet forms.";
         }
@@ -328,6 +335,9 @@ module Tapi {
                 }
                 enum INSTALLED {
                     description "The resource is present in the network and is capable of providing the service expected.";
+                }
+                enum RESTORING {
+                    description "The resource is resilient and is performing a restoration operation.";
                 }
                 enum PENDING_REMOVAL {
                     description "The resource has been marked for removal";
