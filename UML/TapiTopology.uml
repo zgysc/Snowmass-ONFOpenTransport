@@ -323,7 +323,7 @@ At the lowest level of recursion, an FD (within a network element (NE)) represen
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aQ8VsD_NEeWNAdBR30aJhw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aQ9j0D_NEeWNAdBR30aJhw" value="*"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_T7gvkz_LEeWNAdBR30aJhw" name="_encapTopology" type="_ejyEgOKyEeSq5fATALSQkQ" isReadOnly="true" aggregation="composite" association="_T7gvkD_LEeWNAdBR30aJhw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_T7gvkz_LEeWNAdBR30aJhw" name="_encapTopology" type="_ejyEgOKyEeSq5fATALSQkQ" isReadOnly="true" aggregation="shared" association="_T7gvkD_LEeWNAdBR30aJhw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cNt2UD_LEeWNAdBR30aJhw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cNvrgD_LEeWNAdBR30aJhw" value="1"/>
         </ownedAttribute>
